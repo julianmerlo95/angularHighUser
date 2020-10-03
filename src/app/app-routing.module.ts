@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HighUserComponent,
     children: ROUTES
   },
-  {path:'**', pathMatch:'full', redirectTo:'home'}
+  {path:'**', pathMatch:'full', redirectTo:'high'}
 ];
 
 @NgModule({
