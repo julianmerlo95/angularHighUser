@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoverageService } from 'src/app/services/coverage.service';
 
 @Component({
   selector: 'app-coverage-available',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoverageAvailableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: CoverageService) {}
 
   ngOnInit(): void {
+    this.service.getCoverage().subscribe((response: []) => {
+      console.log(response);
+      return
+    });
   }
+  
 
 }

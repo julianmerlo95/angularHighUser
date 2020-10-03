@@ -1,1 +1,47 @@
-<p>vehicle-data works!</p>
+<hr>
+<div>
+  <h2 class="title-information">Ingrese los datos de su vehiculo</h2>
+</div>
+<form autocomplete="off" [formGroup]="form" class="form">
+  <div>
+    <div class="form-group row container-input options">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-select [elements]="marcas" [form]="form" [name]="'marca'" [labelName]="'Marcas'" 
+                    [item]="'desc'" [itemTwo]="'codigo'"></app-select>
+      </div>
+    </div>
+    <div class="form-group row container-input">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-input [inputs]="inputs" [form]="form"></app-input>
+      </div>
+    </div>
+    <div>
+      <button [disabled]="enableButtonModel" class="btn btn-outline-primary btn-block" (click)="getModelo()">{{loadingModel ? 'Cargando...' : 'Buscar modelo'}}</button>
+    </div>  
+    <div class="form-group row container-input options">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-select [elements]="modelos" [form]="form" [name]="'modelo'" [labelName]="'Modelos'"></app-select>
+      </div>
+    </div>
+    <div>
+      <button [disabled]="true" class="btn btn-outline-primary btn-block" (click)="getVersion()">{{loadingVersion ? 'Cargando...' : 'Buscar version'}}</button>
+    </div>
+    <div class="form-group row container-input options">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-select [elements]="enableButtonVersion" [form]="form" [name]="'version'" [labelName]="'Versiones'" [item]="'desc'"></app-select>
+      </div>
+    </div>
+  <div class="form-group row container-input">
+    <div class="input-group col-12 col-md-11 col-lg-8">
+      <button type="submit" class="btn btn-outline-primary btn-block"
+                (click)="nextStep()">
+        Siguiente
+      </button>
+      <button type="submit" class="btn btn-outline-primary btn-block"
+                (click)="goBack()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>
+</form>

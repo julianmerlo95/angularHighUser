@@ -1,1 +1,30 @@
-<p>personal-information works!</p>
+<hr>
+<div>
+  <h2 class="title-information">Ingrese sus datos para poder comenzar con el alta del usuario</h2>
+</div>
+<form autocomplete="off" [formGroup]="form" class="form">
+  <div>
+    <div class="form-group row container-input">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-input [inputs]="inputs" [form]="form"></app-input>
+      </div>
+    </div>
+    <div class="form-group row container-input options">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-select [elements]="provincias" [form]="form" [name]="'provincia'" [labelName]="'Provincias'" [item]="'nombre'" ></app-select>
+      </div>
+    </div>
+    <div class="form-group row container-input">
+      <div class="col-sm-4 col-md-11 col-lg-12">
+        <app-input [inputs]="inputsUserPass" [form]="form"></app-input>
+      </div>
+    </div>
+  <div class="form-group row container-input">
+    <div class="input-group col-12 col-md-11 col-lg-8">
+      <button  (click)="nextStep()" type="submit" class="btn btn-outline-primary btn-block">
+        Siguiente
+      </button>
+    </div>
+  </div>
+</div>
+</form>
