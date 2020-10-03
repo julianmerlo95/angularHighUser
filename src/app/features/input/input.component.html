@@ -1,0 +1,12 @@
+<form autocomplete="off" [formGroup]="form">
+  <div *ngFor="let input of inputs">
+    <input class="form-control"
+          type="text"
+          [placeholder]="input.name"
+          [formControlName]="input.name"
+          [class.is-invalid]="validatorService.inputValidate(input.name, form)">
+    <small *ngIf="validatorService.inputValidate(input.name, form)" class="text-danger">
+      Campo Requerido
+    </small>
+  </div>
+</form>
