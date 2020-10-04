@@ -1,0 +1,22 @@
+input {
+  background: #1075AF;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:placeholder:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+  input {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,54 @@
+.navbar {
+  background: #1075AF;
+  width: 100%;
+}
+
+.container-navbar {
+  display: flex !important;
+  text-align: center;
+  width: 100%;
+}
+
+.nav-item {
+  width: 33%;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  text-transform: none;
+}
+
+a {
+  color: white;
+}
+
+.active {
+  background: #F6832A;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 425px) {
+
+  .navbar {
+    background: #1075AF;
+    width: 100%;
+  }
+
+  .container-navbar {
+    justify-content: space-around;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .navbar {
+    display: none;
+  }
+
+  .nav-item {
+    text-align: center;
+    width: 33%;
+  }
+}
