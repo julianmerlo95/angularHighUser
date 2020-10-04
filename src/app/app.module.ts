@@ -14,6 +14,7 @@ import { InputComponent } from './features/input/input.component';
 import { SelectComponent } from './features/select/select.component';
 import { SummaryComponent } from './components/high-user/summary/summary.component';
 import { GoodbyeComponent } from './components/goodbye/goodbye.component';
+import { SpinnerComponent } from './features/spinner/spinner.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { GoodbyeComponent } from './components/goodbye/goodbye.component';
     SelectComponent,
     SummaryComponent,
     GoodbyeComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

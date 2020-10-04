@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private service: RequestService) { }
 
-  valdiate(control: FormControl): {[s: string]: boolean}{
+  validate(control: FormControl): {[s: string]: boolean}{
     if (control.value === 'julian'){
       return{valdiate: true};
     }
@@ -22,6 +22,17 @@ export class UserService {
   userValidate(user): any{
     return this.service.request(environment.user)
       .pipe(map((response: any) => response.provincias));
+  }
+
+  dateValidate(date: FormControl): any{
+      const convertAge = new Date(date.value);
+      const timeDiff = Math.abs(Date.now() - convertAge.getTime());
+      const response = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+      console.log(response);
+      if(response >= 18 && response < 99){
+        return null;
+      }
+      return { valdiate: true };
   }
 
 }

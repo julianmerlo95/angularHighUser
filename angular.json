@@ -60,6 +60,22 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "stubs": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stubs.ts"
+                }
+              ]
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
             }
           }
         },
@@ -70,7 +86,13 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "formSubscription:build:production"
+              "browserTarget": "formSubscription:build:stubs"
+            },
+            "stubs": {
+              "browserTarget": "formSubscription:build:stubs"
+            },
+            "dev": {
+              "browserTarget": "formSubscription:build:stubs"
             }
           }
         },
@@ -119,6 +141,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "formSubscription:serve:production"
+            },
+            "stubs": {
+              "devServerTarget": "formSubscription:serve:stubs"
             }
           }
         }
