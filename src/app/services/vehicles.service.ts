@@ -10,18 +10,18 @@ export class VehiclesService {
 
   constructor(private service: RequestService) { }
 
-  getMarca(){
+  getMarca(): any{
     return this.service.request(environment.vehicles.marca)
-      .pipe(map(response => response))
+      .pipe(map(response => response));
   }
 
-  getModelo(codigo, año){
+  getModelo(codigo, año): any{
     return this.service.request(`${environment.vehicles.marca}/${codigo}/${año}`)
-      .pipe(map(response => response))
+      .pipe(map(response => response));
   }
 
-  getVersion(codigo, año, modelo){
+  getVersion(codigo, año, modelo): any{
     return this.service.request(`${environment.vehicles.marca}/${codigo}/${año}/${modelo}`)
-      .pipe(map(response => response))
+      .pipe(map(response => response));
   }
 }

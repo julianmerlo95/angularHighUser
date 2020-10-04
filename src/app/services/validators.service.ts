@@ -5,9 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class ValidatorsService {
 
+
   constructor() { }
 
-  inputValidate(value, form){        
-    return form.get(value).invalid && form.get(value).touched; 
+  inputValidate(value, form): any{
+    return form.get(value).invalid && form.get(value).touched;
   }
+
 }

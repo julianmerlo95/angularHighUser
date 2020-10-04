@@ -12,16 +12,16 @@ export class UserService {
 
   constructor(private service: RequestService) { }
 
-  valdiate(control: FormControl): {[s:string]: boolean}{    
-    if(control.value == 'julian'){
+  valdiate(control: FormControl): {[s: string]: boolean}{
+    if (control.value === 'julian'){
       return{valdiate: true};
     }
     return null;
   }
 
-  userValidate(user){
+  userValidate(user): any{
     return this.service.request(environment.user)
-      .pipe(map((response:any) => response.provincias));
+      .pipe(map((response: any) => response.provincias));
   }
 
 }

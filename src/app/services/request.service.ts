@@ -8,7 +8,7 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  request(URL_API){        
+  request(URL_API): any{
     return this.http.get(URL_API);
   }
 
