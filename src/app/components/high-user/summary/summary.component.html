@@ -1,0 +1,47 @@
+<div class="container-jumbotron">
+  <div class="jumbotron jumbotron-fluid">
+    <h2>Datos personales</h2>
+    <div class="container" *ngFor="let info of information">
+      <h5 class="">Nombre: {{info.name}}</h5>
+      <h5 class="">Apellido: {{info.apellido}}</h5>
+      <h5 class="">Dni: {{info.dni}}</h5>
+      <h5 class="">email: {{info.email}}</h5>
+      <h5 class="">FechaDeNacimiento: {{info.FechaDeNacimiento}}</h5>
+      <h5 class="">provincia: {{info.provincia}}</h5>
+      <h5 class="">celular: {{info.celular}}</h5>
+      <h5 class="">telefono: {{info.telefono}}</h5>
+      <h5 class="">usuario: {{info.usuario}}</h5>
+    </div>
+    <button class="btn btn-outline-primary btn-block" >
+      Volver para edit datos
+    </button>
+  </div>
+  
+  <div class="jumbotron jumbotron-fluid">
+    <h2>Datos sobre el vehiculo</h2>
+    <div class="container" *ngFor="let car of vehicle">
+      <h5 class="">Año: {{car.ano}}</h5>
+      <h5 class="">Marca: {{car.marca}}</h5>
+      <h5 class="">Modelo: {{car.Modelo}}</h5>
+      <h5 class="">Version: {{car.version}}</h5>
+    </div>
+    <button class="btn btn-outline-primary btn-block" >
+      Volver para edit datos
+    </button>
+  </div>
+  
+  <div class="jumbotron jumbotron-fluid">
+    <h2>Datos sobre el plan seleccionado</h2>
+    <div class="container" *ngFor="let cove of coverage">
+      <h5 class="">Titulo: {{cove.titulo}}</h5>
+      <h5 class="">Texto: {{cove.texto}}</h5>
+      <h5 class="">Descripcion: {{cove.descripcion}}</h5>
+      <h5 class="">Granizo: {{cove.granizo}}</h5>
+      <h5 class="">Costo: {{cove.costo}}</h5>
+      <h5 class="">Producto: {{cove.producto}}</h5>
+    </div>
+    <button class="btn btn-outline-primary btn-block" >
+      Volver para edit datos
+    </button>
+  </div>
+</div>
