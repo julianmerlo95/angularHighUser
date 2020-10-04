@@ -1,0 +1,91 @@
+
+body {
+  background: #E5E5E5;
+  font-family: "Bebas Neue", cursive !important;
+  font-size: 20px;
+}
+
+.form {
+  background: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  box-shadow: 2px -2px 5px gray;
+  margin: 0 auto;
+  padding: 10px;
+  width: 50%;
+}
+
+.container-input {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container-title {
+  background: #F6832A;
+  box-shadow: 2px -2px 5px gray;
+  color: white;
+  margin: 20px 0 20px 0;
+}
+
+.title-information {
+  margin-bottom: 25px;
+  padding: 15px;
+  text-align: center;
+}
+
+.btn-block {
+  background: #F6832A;
+  color: white;
+}
+
+.btn-block:hover {
+  background: #CE6D23;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+  .form {
+    margin: 0 auto;
+    padding: 15px;
+    width: 90%;
+  }
+
+  .title-information {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+}
+
+//Animation
+
+.animated {
+  animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@mixin keyframes($fadeIn) {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}

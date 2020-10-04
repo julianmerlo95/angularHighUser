@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-suitcss",
+  "plugins": [
+  "stylelint-selector-bem-pattern"],
+  rules: {
+    color-hex-case : "upper",
+    color-hex-length: "long",
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    }
+  }
+}
