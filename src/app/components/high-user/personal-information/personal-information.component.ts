@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { LocationService } from 'src/app/services/location.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { input, inputsUserPass } from "./inputData";
 
 @Component({
   selector: 'app-personal-information',
@@ -20,12 +21,8 @@ export class PersonalInformationComponent implements OnInit {
               private locationService: LocationService,
               private userService: UserService,
               private router: Router) { 
-    this.inputs = [{name:'dni', placeholder:'Dni'},{name:'nombre', placeholder:'Nombre'},
-                  {name:'apellido', placeholder:'Apellido'},{name:'email', placeholder:'E-mail'},
-                  {name:'celular', placeholder:'Celular'},{name:'telefono', placeholder:'Telefono'},
-                  {name:'FechaDeNacimiento', placeholder:'Fecha de Nacimiento'}];
-    this.inputsUserPass = [{name:'usuario',message:'Ya existe el usuario', placeholder:'Usuario'},
-                          {name:'contraseña',message: 'requerido', placeholder:'Contraseña'}]
+    this.inputs = input;
+    this.inputsUserPass = inputsUserPass;
     this.locationService.getLocation().subscribe(response => this.provincias = response)
     this.loadForm();
   }
@@ -34,23 +31,34 @@ export class PersonalInformationComponent implements OnInit {
   }
 
   loadForm(){
+    const user = JSON.parse(localStorage.getItem('user'));
     this.form = this.formBuilder.group({
-      dni :['', [Validators.required, Validators.minLength(7),Validators.maxLength(8)]],
-      nombre :['', [Validators.required, Validators.minLength(2),Validators.maxLength(15)]],
-      apellido :['', [Validators.required, Validators.minLength(2),Validators.maxLength(15)]],
-      email :['', [Validators.required, Validators.email]],
-      celular :['', [Validators.required]],
-      telefono :['', [Validators.required]],
-      FechaDeNacimiento : ['', [Validators.required]],
-      provincia: ['', [Validators.required]],
-      usuario: ['',[Validators.required, this.userService.valdiate]],
-      contraseña: ['']
+      dni :[Object.keys(user).length > 1 ? user.user[0].dni : '' , 
+        [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(7),Validators.maxLength(8)]],
+      nombre :[Object.keys(user).length > 1 ? user.user[0].nombre : '' , 
+        [Validators.required,Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(2),Validators.maxLength(15)]],
+      apellido :[Object.keys(user).length > 1 ? user.user[0].apellido : '' , 
+        [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(2),Validators.maxLength(15)]],
+      email :[Object.keys(user).length > 1 ? user.user[0].email : '' , 
+        [Validators.required, Validators.email]],
+      celular :[Object.keys(user).length > 1 ? user.user[0].celular : '' , 
+        [Validators.required, Validators.pattern("^[0-9]*$")]],
+      telefono :[Object.keys(user).length > 1 ? user.user[0].telefono : '' , 
+        [Validators.required, Validators.pattern("^[0-9]*$")]],
+      FechaDeNacimiento : [Object.keys(user).length > 1  ? user.user[0].FechaDeNacimiento : '' , 
+        [Validators.required]],
+      provincia: [Object.keys(user).length > 1 ? user.user[0].provincia : '' , [Validators.required]],
+      usuario: [Object.keys(user).length > 1 ? user.user[0].usuario : '' , 
+        [Validators.required, this.userService.valdiate, Validators.minLength(7), Validators.maxLength(8)]],
+      contraseña: [Object.keys(user).length > 1 ? user.user[0].contraseña : '' , 
+        [Validators.minLength(7)]]
     })
   }
 
   nextStep(){
-    localStorage.setItem('user',JSON.stringify({user:this.form.value}));
-    this.router.navigate(['/high/vehicle']);
+    const user = JSON.parse(localStorage.getItem('user'));    
+    localStorage.setItem('user',JSON.stringify({...user, user:[this.form.value]}));
+    this.router.navigate(['/high/vehicle']); 
   }
 
 }

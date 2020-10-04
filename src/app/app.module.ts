@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './features/input/input.component';
 import { SelectComponent } from './features/select/select.component';
 import { SummaryComponent } from './components/high-user/summary/summary.component';
+import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SummaryComponent } from './components/high-user/summary/summary.compone
     InputComponent,
     SelectComponent,
     SummaryComponent,
+    GoodbyeComponent,
   ],
   imports: [
     BrowserModule,

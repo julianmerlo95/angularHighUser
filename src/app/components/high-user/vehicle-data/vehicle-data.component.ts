@@ -26,7 +26,7 @@ export class VehicleDataComponent implements OnInit {
               private vehicleService: VehiclesService,
               private valiatorService: ValidatorsService) {
     this.vehicleService.getMarca().subscribe((response:[])=> this.marcas = response)
-    this.inputs = [{name:'ano',message: 'requerido'}];
+    this.inputs = [{name:'ano',placeholder:'Año', msg:'Ultimos 20 años'}];
     this.loadForm();
     this.selectDisable = false;
     this.enableButtonModel = true;
@@ -37,11 +37,18 @@ export class VehicleDataComponent implements OnInit {
   }
 
   loadForm(){
+    const user = JSON.parse(localStorage.getItem('user'));    
+    console.log(user.vehicle);
+    
     this.form = this.formBuilder.group({
-      marca :['', [Validators.required, Validators.minLength(7),Validators.maxLength(8)]],
-      ano :['', [Validators.required]],
-      modelo :['', [Validators.required]],
-      version :['', [Validators.required, Validators.email]],
+      marca :[user.vehicle ? user.vehicle[0].marca :'', 
+        [Validators.required, Validators.minLength(7),Validators.maxLength(8)]],
+      ano :[user.vehicle ? user.vehicle[0].ano :'', 
+        [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(2000), Validators.max(2020)]],
+      modelo :[user.vehicle ? user.vehicle[0].modelo :'', 
+        [Validators.required]],
+      version :[user.vehicle ? user.vehicle[0].version :'', 
+        [Validators.required, Validators.email]],
     })
   }
 
@@ -68,7 +75,7 @@ export class VehicleDataComponent implements OnInit {
   nextStep(){
     const user:any = JSON.parse(localStorage.getItem('user'));
     const vehicle = this.form.value;
-    localStorage.setItem('user', JSON.stringify({...user, vehicle}));
+    localStorage.setItem('user', JSON.stringify({...user, vehicle:[vehicle]}));
     this.router.navigate(['/high/coverage']);
   }
 

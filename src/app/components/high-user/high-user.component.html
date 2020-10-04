@@ -1,7 +1,20 @@
-<div class="router-option" routerLinkActive>
-  <button class="active btn btn-outline-primary btn-block" [routerLink]="'information'">Informacion</button>
-  <button class="active btn btn-outline-primary btn-block" [routerLink]="'vehicle'">Vehiculo</button>
-  <button class="active btn btn-outline-primary btn-block" [routerLink]="'coverage'">Cobertura</button>
-  <button class="active btn btn-outline-primary btn-block" [routerLink]="'summary'">Resumen</button>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light animated fadeIn fast">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['information']">Informacion</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['vehicle']">Vehiculos</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['coverage']">Cobertura</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['summary']">Resumen</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>

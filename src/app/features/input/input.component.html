@@ -5,9 +5,9 @@
           [placeholder]="input.placeholder"
           [formControlName]="input.name"
           [class.is-invalid]="validatorService.inputValidate(input.name, form)">
-    <div class="alert alert-danger" role="alert"
+    <div class="alert alert-danger animated fadeIn" role="alert"
     *ngIf="validatorService.inputValidate(input.name, form)">
-     {{input.placeholder}} es requerido
+      {{input.msg}}
     </div>
   </div>
 </form>

@@ -1,47 +1,66 @@
-<div class="container-jumbotron">
+<div class="container-title">
+  <h2 class="title-information">Datos totales</h2>
+</div>
+<div class="container-jumbotron animated fadeIn fast">
   <div class="jumbotron jumbotron-fluid">
-    <h2>Datos personales</h2>
+    <div class="container-text"> 
+      <h2>Datos personales</h2>
+    </div>
     <div class="container" *ngFor="let info of information">
-      <h5 class="">Nombre: {{info.name}}</h5>
-      <h5 class="">Apellido: {{info.apellido}}</h5>
-      <h5 class="">Dni: {{info.dni}}</h5>
-      <h5 class="">email: {{info.email}}</h5>
-      <h5 class="">FechaDeNacimiento: {{info.FechaDeNacimiento}}</h5>
-      <h5 class="">provincia: {{info.provincia}}</h5>
-      <h5 class="">celular: {{info.celular}}</h5>
-      <h5 class="">telefono: {{info.telefono}}</h5>
-      <h5 class="">usuario: {{info.usuario}}</h5>
+      <h5 class=""><span>Nombre:</span> {{info.nombre}}</h5>
+      <h5 class=""><span>Apellido:</span> {{info.apellido}}</h5>
+      <h5 class=""><span>Dni:</span> {{info.dni}}</h5>
+      <h5 class=""><span>email:</span> {{info.email}}</h5>
+      <h5 class=""><span>FechaDeNacimiento:</span> {{info.FechaDeNacimiento}}</h5>
+      <h5 class=""><span>provincia:</span> {{info.provincia}}</h5>
+      <h5 class=""><span>celular:</span> {{info.celular}}</h5>
+      <h5 class=""><span>telefono:</span> {{info.telefono}}</h5>
+      <h5 class=""><span>usuario:</span> {{info.usuario}}</h5>
     </div>
-    <button class="btn btn-outline-primary btn-block" >
+    <button class="btn btn-outline-primary btn-block"
+            (click)="goBack('information')">
       Volver para edit datos
     </button>
   </div>
   
   <div class="jumbotron jumbotron-fluid">
-    <h2>Datos sobre el vehiculo</h2>
+    <div class="container-text"> 
+      <h2>Datos sobre el vehiculo</h2>
+    </div>
     <div class="container" *ngFor="let car of vehicle">
-      <h5 class="">Año: {{car.ano}}</h5>
-      <h5 class="">Marca: {{car.marca}}</h5>
-      <h5 class="">Modelo: {{car.Modelo}}</h5>
-      <h5 class="">Version: {{car.version}}</h5>
+      <h5 class=""><span>Año:</span> {{car.ano}}</h5>
+      <h5 class=""><span>Marca:</span> {{car.marca}}</h5>
+      <h5 class=""><span>Modelo:</span> {{car.Modelo}}</h5>
+      <h5 class=""><span>Version:</span> {{car.version}}</h5>
     </div>
-    <button class="btn btn-outline-primary btn-block" >
+    <button class="btn btn-outline-primary btn-block"
+            (click)="goBack('vehicle')">
       Volver para edit datos
     </button>
   </div>
   
   <div class="jumbotron jumbotron-fluid">
-    <h2>Datos sobre el plan seleccionado</h2>
+    <div class="container-text"> 
+      <h2>Datos sobre cobertura</h2>
+    </div>    
     <div class="container" *ngFor="let cove of coverage">
-      <h5 class="">Titulo: {{cove.titulo}}</h5>
-      <h5 class="">Texto: {{cove.texto}}</h5>
-      <h5 class="">Descripcion: {{cove.descripcion}}</h5>
-      <h5 class="">Granizo: {{cove.granizo}}</h5>
-      <h5 class="">Costo: {{cove.costo}}</h5>
-      <h5 class="">Producto: {{cove.producto}}</h5>
+      <h5 class=""><span>Titulo:</span> {{cove.titulo}}</h5>
+      <h5 class=""><span>Texto:</span> {{cove.texto}}</h5>
+      <h5 class=""><span>Descripcion:</span> {{cove.descripcion}}</h5>
+      <h5 class=""><span>Granizo:</span> {{cove.granizo}}</h5>
+      <h5 class=""><span>Costo:</span> {{cove.costo}}</h5>
+      <h5 class=""><span>Producto:</span> {{cove.producto}}</h5>
     </div>
-    <button class="btn btn-outline-primary btn-block" >
+    <button class="btn btn-outline-primary btn-block" 
+            (click)="goBack('coverage')">
       Volver para edit datos
     </button>
-  </div>
+  </div> 
+</div>
+
+<div>
+  <button class="btn btn-outline-primary btn-block" 
+          (click)="goBye()">
+    Confirmar Datos
+  </button>
 </div>

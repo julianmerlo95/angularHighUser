@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-summary',
@@ -12,16 +13,23 @@ export class SummaryComponent implements OnInit {
   coverage: any = []
   user;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.user = JSON.parse(localStorage.getItem('user'));    
   }
 
   ngOnInit(): void {
-    this.information.push(this.user.user) ;
-    this.vehicle.push(this.user.vehicle) 
-    this.coverage.push(this.user.coverage) 
-    console.log(this.coverage);
-    
+    this.information = this.user.user;
+    this.vehicle = this.user.vehicle;
+    this.coverage = this.user.coverage;
+  }
+
+  goBack(path){
+    this.router.navigate([`/high/${path}`]);
+  }
+
+  goBye(){
+    localStorage.setItem('user',JSON.stringify({}));
+    this.router.navigate([`/goodbye`]);
   }
 
 }

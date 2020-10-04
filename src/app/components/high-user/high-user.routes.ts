@@ -9,5 +9,5 @@ export const ROUTES: Routes = [
   {path:'vehicle', component:VehicleDataComponent},
   {path:'coverage', component:CoverageAvailableComponent},
   {path:'summary', component:SummaryComponent},
-  {path:'**', pathMatch:'full', redirectTo:'information'}
+  {path:'**', pathMatch:'full', redirectTo:''}
 ];
