@@ -3,12 +3,12 @@
     <label>{{labelName}}</label>
     <select name="name" [formControlName]="name">
         <option *ngFor="let element of elements; let i = index" 
-        [value]="element[itemTwo]  || element[item] || elements[i]">
+        [value]="element[itemTwo] || element[item] || elements[i]">
                 {{element[item] || element}}
         </option>
     </select>
     <div class="alert alert-danger animated fadeIn" role="alert"
-   > 
+         *ngIf="inputValidate(name, form)"> 
       Debe seleccionar una {{name}}
     </div>
   </div>

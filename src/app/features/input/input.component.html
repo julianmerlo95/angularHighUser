@@ -1,13 +1,13 @@
 <form autocomplete="off" [formGroup]="form">
   <div *ngFor="let input of inputs">
     <input class="form-control"
-          type="text"
+          [type]="input.type || 'text'"
           [placeholder]="input.placeholder"
           [formControlName]="input.name"
           [class.is-invalid]="validatorService.inputValidate(input.name, form)">
     <div class="alert alert-danger animated fadeIn" role="alert"
     *ngIf="validatorService.inputValidate(input.name, form)">
-    {{input.name}}: {{input.msg}}
+    {{input.placeholder}}: {{input.msg}}
     </div>
   </div>
 </form>

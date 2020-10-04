@@ -11,10 +11,11 @@ export class InputComponent implements OnInit {
   @Input() inputs;
   @Input() validation;
   @Input() form;
+  @Input() type;
 
   constructor(private validatorService: ValidatorsService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
 }
