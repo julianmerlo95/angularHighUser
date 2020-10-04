@@ -4,17 +4,17 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.sass']
+  styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
 
-  information: any = []
-  vehicle: any = []
-  coverage: any = []
+  information: any = [];
+  vehicle: any = [];
+  coverage: any = [];
   user;
 
-  constructor(private router: Router) { 
-    this.user = JSON.parse(localStorage.getItem('user'));    
+  constructor(private router: Router) {
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
 
   ngOnInit(): void {
@@ -23,12 +23,12 @@ export class SummaryComponent implements OnInit {
     this.coverage = this.user.coverage;
   }
 
-  goBack(path){
+  goBack(path): any{
     this.router.navigate([`/high/${path}`]);
   }
 
-  goBye(){
-    localStorage.setItem('user',JSON.stringify({}));
+  goBye(): any{
+    localStorage.setItem('user', JSON.stringify({}));
     this.router.navigate([`/goodbye`]);
   }
 

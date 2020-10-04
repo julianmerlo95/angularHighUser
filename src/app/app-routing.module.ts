@@ -6,14 +6,14 @@ import { HomeComponent } from './components/home/home.component';
 import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 
 const routes: Routes = [
-  {path:'home',component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {
     path: 'high',
     component: HighUserComponent,
     children: ROUTES
   },
-  {path:'goodbye',component: GoodbyeComponent},
-  {path:'**', pathMatch:'full', redirectTo:'high'}
+  {path: 'goodbye', component: GoodbyeComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'goodbye'}
 ];
 
 @NgModule({

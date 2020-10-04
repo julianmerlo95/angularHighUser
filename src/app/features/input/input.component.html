@@ -7,7 +7,7 @@
           [class.is-invalid]="validatorService.inputValidate(input.name, form)">
     <div class="alert alert-danger animated fadeIn" role="alert"
     *ngIf="validatorService.inputValidate(input.name, form)">
-      {{input.msg}}
+    {{input.name}}: {{input.msg}}
     </div>
   </div>
 </form>

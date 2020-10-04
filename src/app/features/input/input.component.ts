@@ -4,13 +4,13 @@ import { ValidatorsService } from 'src/app/services/validators.service';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.sass']
+  styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
 
-  @Input() inputs
-  @Input() validation
-  @Input() form
+  @Input() inputs;
+  @Input() validation;
+  @Input() form;
 
   constructor(private validatorService: ValidatorsService) { }
 
