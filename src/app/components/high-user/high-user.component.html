@@ -1,7 +1,7 @@
-<div>
-  <!-- <h2>Carga de alta de usuario</h2>
-  <button [routerLink]="'information'">Information</button>
-  <button [routerLink]="'vehicle'">Vehicle</button>
-  <button [routerLink]="'coverage'">Coverage</button> -->
-  <router-outlet></router-outlet>
+<div class="router-option" routerLinkActive>
+  <button class="active btn btn-outline-primary btn-block" [routerLink]="'information'">Informacion</button>
+  <button class="active btn btn-outline-primary btn-block" [routerLink]="'vehicle'">Vehiculo</button>
+  <button class="active btn btn-outline-primary btn-block" [routerLink]="'coverage'">Cobertura</button>
+  <button class="active btn btn-outline-primary btn-block" [routerLink]="'summary'">Resumen</button>
 </div>
+<router-outlet></router-outlet>

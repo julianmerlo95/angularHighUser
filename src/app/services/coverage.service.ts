@@ -13,6 +13,9 @@ export class CoverageService {
 
   getCoverage(){
     return this.service.request(environment.coverage)
-      .pipe(map((response: []) =>  response));
+      .pipe(map((response: []) => {
+        const arraySort = response.sort((a:any, b:any) => b.puntaje - a.puntaje);
+        return arraySort;
+      }));
   }
 }

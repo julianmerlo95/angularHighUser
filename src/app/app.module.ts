@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './features/input/input.component';
 import { SelectComponent } from './features/select/select.component';
+import { SummaryComponent } from './components/high-user/summary/summary.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SelectComponent } from './features/select/select.component';
     CoverageAvailableComponent,
     InputComponent,
     SelectComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,
