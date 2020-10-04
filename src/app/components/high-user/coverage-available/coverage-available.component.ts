@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-coverage-available',
   templateUrl: './coverage-available.component.html',
-  styleUrls: ['./coverage-available.component.sass']
+  styleUrls: ['./coverage-available.component.scss']
 })
 export class CoverageAvailableComponent implements OnInit {
 
-  coverages: []
-  selectCoverage: object
+  coverages: [];
+  selectCoverage: object;
 
   constructor(private service: CoverageService,
               private router: Router) {}
@@ -19,19 +19,19 @@ export class CoverageAvailableComponent implements OnInit {
     this.service.getCoverage().subscribe((response: []) => this.coverages = response);
   }
 
-  selectPlan(coverage){
+  selectPlan(coverage): any{
     this.selectCoverage = coverage;
     this.nextStep();
   }
-  
-  nextStep(){
-    const user:any = JSON.parse(localStorage.getItem('user'));
+
+  nextStep(): any{
+    const user: any = JSON.parse(localStorage.getItem('user'));
     const coverage = this.selectCoverage;
-    localStorage.setItem('user', JSON.stringify({...user, coverage:[coverage]}));
+    localStorage.setItem('user', JSON.stringify({...user, coverage: [coverage]}));
     this.router.navigate(['/high/summary']);
   }
 
-  goBack(){
+  goBack(): any{
     this.router.navigate(['/high/vehicle']);
   }
 
