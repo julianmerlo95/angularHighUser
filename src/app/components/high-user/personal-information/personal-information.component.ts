@@ -46,12 +46,12 @@ export class PersonalInformationComponent implements OnInit {
       telefono : [Object.keys(user).length > 1 ? user.user[0].telefono : '' ,
         [Validators.required, Validators.pattern('^[0-9]*$')]],
       FechaDeNacimiento : [Object.keys(user).length > 1  ? user.user[0].FechaDeNacimiento : '' ,
-        [Validators.required]],
+        [Validators.required, this.userService.dateValidate]],
       provincia: [Object.keys(user).length > 1 ? user.user[0].provincia : '' , [Validators.required]],
       usuario: [Object.keys(user).length > 1 ? user.user[0].usuario : '' ,
-        [Validators.required, this.userService.valdiate, Validators.minLength(7), Validators.maxLength(8)]],
+        [Validators.required, this.userService.validate, Validators.minLength(7), Validators.maxLength(8)]],
       contraseña: [Object.keys(user).length > 1 ? user.user[0].contraseña : '' ,
-        [Validators.minLength(7), Validators.required]]
+        [Validators.required, Validators.minLength(7)]]
     });
   }
 

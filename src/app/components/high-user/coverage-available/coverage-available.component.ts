@@ -11,12 +11,19 @@ export class CoverageAvailableComponent implements OnInit {
 
   coverages: [];
   selectCoverage: object;
+  loadingData: boolean
 
   constructor(private service: CoverageService,
-              private router: Router) {}
+              private router: Router) {
+                this.loadingData = true;
+              }
 
   ngOnInit(): void {
-    this.service.getCoverage().subscribe((response: []) => this.coverages = response);
+    this.service.getCoverage().subscribe((response: []) => {
+      this.loadingData = false;
+      return this.coverages = response
+      
+    });
   }
 
   selectPlan(coverage): any{

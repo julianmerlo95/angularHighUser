@@ -12,8 +12,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) {
     this.img = '../../../assets/img/imgSeguro.jpg';
-    console.log(this.img);
-
   }
 
   ngOnInit(): void {
