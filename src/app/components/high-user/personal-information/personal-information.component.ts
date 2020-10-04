@@ -20,9 +20,12 @@ export class PersonalInformationComponent implements OnInit {
               private locationService: LocationService,
               private userService: UserService,
               private router: Router) { 
-    this.inputs = [{name:'dni'},{name:'nombre'},{name:'apellido'},{name:'email'},
-                  {name:'celular'},{name:'telefono'},{name:'FechaDeNacimiento'}];
-    this.inputsUserPass = [{name:'usuario',message:'Ya existe el usuario'},{name:'contraseña',message: 'requerido'}]
+    this.inputs = [{name:'dni', placeholder:'Dni'},{name:'nombre', placeholder:'Nombre'},
+                  {name:'apellido', placeholder:'Apellido'},{name:'email', placeholder:'E-mail'},
+                  {name:'celular', placeholder:'Celular'},{name:'telefono', placeholder:'Telefono'},
+                  {name:'FechaDeNacimiento', placeholder:'Fecha de Nacimiento'}];
+    this.inputsUserPass = [{name:'usuario',message:'Ya existe el usuario', placeholder:'Usuario'},
+                          {name:'contraseña',message: 'requerido', placeholder:'Contraseña'}]
     this.locationService.getLocation().subscribe(response => this.provincias = response)
     this.loadForm();
   }
