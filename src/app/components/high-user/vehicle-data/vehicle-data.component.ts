@@ -60,15 +60,16 @@ export class VehicleDataComponent implements OnInit {
     this.vehicleService.getVersion(this.form.value.marca, this.form.value.ano, this.form.value.modelo)
         .subscribe((response:[])=> {
           this.loadingVersion = false;  
+          console.log(response);
           this.versiones = response;
     })    
   }
 
   nextStep(){
     const user:any = JSON.parse(localStorage.getItem('user'));
-    user.vehicle = this.form.value;
-    console.log(user);
-    localStorage.setItem('user', JSON.stringify({user}));
+    const vehicle = this.form.value;
+    localStorage.setItem('user', JSON.stringify({...user, vehicle}));
+    this.router.navigate(['/high/coverage']);
   }
 
   goBack(){
