@@ -12,6 +12,7 @@ export class InputComponent implements OnInit {
   @Input() validation;
   @Input() form;
   @Input() type;
+  @Input() column;
 
   constructor(private validatorService: ValidatorsService) { }
 

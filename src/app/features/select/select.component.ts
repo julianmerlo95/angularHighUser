@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ValidatorsService } from 'src/app/services/validators.service';
 
 @Component({
   selector: 'app-select',
@@ -15,12 +14,14 @@ export class SelectComponent implements OnInit {
   @Input() item;
   @Input() itemTwo;
 
-  constructor(private validatorService: ValidatorsService) {
+  constructor() {
   }
 
   ngOnInit(): void {
   }
+
   inputValidate(value, form): any{
+    console.log(form.get(value).invalid);
 
     return form.get(value).invalid && form.get(value).touched;
   }
