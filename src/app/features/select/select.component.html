@@ -1,8 +1,8 @@
 <form autocomplete="off" [formGroup]="form">
   <div>
     <label>{{labelName}}</label>
-    <select name="name" [formControlName]="name">
-        <option *ngFor="let element of elements; let i = index" 
+    <select name="name" [formControlName]="name" value="asd">
+        <option *ngFor="let element of elements; let i = index"
         [value]="element[itemTwo] || element[item] || elements[i]">
                 {{element[item] || element}}
         </option>

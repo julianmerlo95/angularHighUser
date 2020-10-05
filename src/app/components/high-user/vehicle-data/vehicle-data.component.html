@@ -18,7 +18,7 @@
     <div class="container-button">
       <button [disabled]="form.value.ano === '' || form.value.marca == ''" 
               class="btn btn-outline-primary btn-block" 
-              (click)="getModelo()">{{loadingModel ? 'Cargando...' : 'Buscar modelo'}}
+              (click)="getModelo()">{{loadingModel ? 'Cargando...' : 'Buscar Modelo'}}
       </button>
       <small class="description-text">Para poder buscar un modelo, tiene que ingresar Marca y Año</small>
     </div>  
@@ -30,7 +30,7 @@
     <div class="container-button">
       <button [disabled]="form.value.ano === '' || form.value.marca == '' || form.value.modelo == ''"  
               class="btn btn-outline-primary btn-block" 
-              (click)="getVersion()">{{loadingVersion ? 'Cargando...' : 'Buscar version'}}
+              (click)="getVersion()">{{loadingVersion ? 'Cargando...' : 'Buscar Version'}}
       </button>
       <small class="description-text">Para poder buscar una Version, tiene que ingresar Marca, Año y Modelo</small>
     </div>
