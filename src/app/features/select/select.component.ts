@@ -18,10 +18,10 @@ export class SelectComponent implements OnInit {
   constructor(private validatorService: ValidatorsService) {
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
   }
   inputValidate(value, form): any{
-    
+
     return form.get(value).invalid && form.get(value).touched;
   }
 

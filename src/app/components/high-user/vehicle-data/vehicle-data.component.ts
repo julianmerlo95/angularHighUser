@@ -54,7 +54,7 @@ export class VehicleDataComponent implements OnInit {
   getModelo(): any{
     this.loadingModel = true;
     this.vehicleService.getModelo(this.form.value.marca, this.form.value.ano)
-        .subscribe((response: []) => {                    
+        .subscribe((response: []) => {
           this.modelos = response;
           this.loadingModel = false;
           this.enableButtonModel = false;

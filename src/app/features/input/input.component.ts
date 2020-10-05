@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
 
   constructor(private validatorService: ValidatorsService) { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
   }
 
 }
