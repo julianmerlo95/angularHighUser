@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:stubs": "concurrently \"ng serve --c=stubs --host 0.0.0.0 \" \"npm:stubs\"",
-    "start:dev": "ng serve --c=dev",
+    "start:dev": "ng serve --c=dev -o",
     "lint:app": "tslint \"src/**/*.ts\"",
     "lint:app:fix": "tslint --fix \"src/**/*.ts\"",
     "lint:scss": "stylelint \"src/**/*.scss\"",

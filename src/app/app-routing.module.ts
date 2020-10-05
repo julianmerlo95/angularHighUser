@@ -13,7 +13,7 @@ const routes: Routes = [
     children: ROUTES
   },
   {path: 'goodbye', component: GoodbyeComponent},
-  {path: '**', pathMatch: 'full', redirectTo: 'goodbye'}
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({

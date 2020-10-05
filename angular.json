@@ -92,7 +92,7 @@
               "browserTarget": "formSubscription:build:stubs"
             },
             "dev": {
-              "browserTarget": "formSubscription:build:stubs"
+              "browserTarget": "formSubscription:build:dev"
             }
           }
         },
