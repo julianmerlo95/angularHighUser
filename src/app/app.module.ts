@@ -15,6 +15,9 @@ import { SelectComponent } from './features/select/select.component';
 import { SummaryComponent } from './components/high-user/summary/summary.component';
 import { GoodbyeComponent } from './components/goodbye/goodbye.component';
 import { SpinnerComponent } from './features/spinner/spinner.component';
+import { CardCoverageComponent } from './features/card-coverage/card-coverage.component';
+import { CardSummaryComponent } from './features/card-summary/card-summary.component';
+import { CardVehicleComponent } from './features/card-vehicle/card-vehicle.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { SpinnerComponent } from './features/spinner/spinner.component';
     SummaryComponent,
     GoodbyeComponent,
     SpinnerComponent,
+    CardCoverageComponent,
+    CardSummaryComponent,
+    CardVehicleComponent,
   ],
   imports: [
     BrowserModule,

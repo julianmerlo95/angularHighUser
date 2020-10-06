@@ -10,7 +10,7 @@ export class SummaryComponent implements OnInit {
 
   information: any = [];
   vehicle: any = [];
-  coverage: any = [];
+  coverages: any = [];
   user;
 
   constructor(private router: Router) {
@@ -22,7 +22,9 @@ export class SummaryComponent implements OnInit {
   ngOnInit(): void {
     this.information = this.user.user;
     this.vehicle = this.user.vehicle;
-    this.coverage = this.user.coverage;
+    this.coverages = this.user.coverage;
+    console.log(this.coverages[0].producto);
+    
   }
 
   goBack(path): any{

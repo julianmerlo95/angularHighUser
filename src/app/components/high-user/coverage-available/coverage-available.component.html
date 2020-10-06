@@ -23,12 +23,11 @@
         <p class="card-text">{{coverage.descripcion}}</p>
       </div>
       <div class="card-container-bottom">
-        <p class="card-text">Covertura contra granizo:{{coverage.granizo ? ' Si' : ' No'}}</p>
-        <p class="card-text">Producto: {{coverage.producto}}</p>
-        <p class="card-text">Codido Producto: {{coverage.codigoProducto}}</p>
-        <p class="card-text">Franquicia: {{coverage.franquicia}}</p>
-        <p class="card-text">Puntaje: {{coverage.puntaje}}</p>
-        <a class="card-link">Costo: {{coverage.costo}}</a>
+        <app-card-coverage 
+        [granizo]="coverage.granizo" [producto]="coverage.producto"
+        [codigoProducto]="coverage.codigoProducto" [franquicia]="coverage.franquicia"
+        [puntaje]="coverage.puntaje" [costo]="coverage.costo">
+        </app-card-coverage>
       </div>
       <button class="btn btn-outline-primary btn-block" 
               (click)="selectPlan(coverage)">

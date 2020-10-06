@@ -14,16 +14,13 @@
       <h2>Datos personales</h2>
     </div>
     <div class="container" *ngFor="let info of information">
-      <p><span>Nombre:</span> {{info.nombre}}</p>
-      <p><span>Apellido:</span> {{info.apellido}}</p>
-      <p><span>Dni:</span> {{info.dni}}</p>
-      <p><span>email:</span> {{info.email}}</p>
-      <p><span>FechaDeNacimiento:</span> {{info.FechaDeNacimiento}}</p>
-      <p><span>provincia:</span> {{info.provincia}}</p>
-      <p><span>Municipio:</span> {{info.municipios}}</p>
-      <p><span>celular:</span> {{info.celular}}</p>
-      <p><span>telefono:</span> {{info.telefono}}</p>
-      <p><span>usuario:</span> {{info.usuario}}</p>
+      <app-card-summary 
+        [nombre]="info.nombre" [apellido]="info.apellido"
+        [dni]="info.dni" [email]="info.email"
+        [FechaDeNacimiento]="info.FechaDeNacimiento" [provincia]="info.provincia"
+        [municipios]="info.municipios" [celular]="info.celular"
+        [telefono]="info.telefono" [usuario]="info.usuario">
+      </app-card-summary>
     </div>
     <button class="btn btn-outline-primary btn-block"
             (click)="goBack('information')">
@@ -36,10 +33,10 @@
       <h2>Datos sobre el vehiculo</h2>
     </div>
     <div class="container" *ngFor="let car of vehicle">
-      <p><span>Año:</span> {{car.ano}}</p>
-      <p><span>Marca:</span> {{car.marca}}</p>
-      <p><span>Modelo:</span> {{car.modelo}}</p>
-      <p><span>Version:</span> {{car.version}}</p>
+    <app-card-vehicle 
+      [ano]="car.ano" [marca]="car.marca" 
+      [modelo]="car.modelo" [version]="car.version">
+    </app-card-vehicle>
     </div>
     <button class="btn btn-outline-primary btn-block"
             (click)="goBack('vehicle')">
@@ -51,13 +48,12 @@
     <div class="container-text"> 
       <h2>Datos sobre cobertura</h2>
     </div>    
-    <div class="container" *ngFor="let cove of coverage">
-      <p><span>Titulo:</span> {{cove.titulo}}</p>
-      <p><span>Texto:</span> {{cove.texto}}</p>
-      <p><span>Descripcion:</span> {{cove.descripcion}}</p>
-      <p><span>Granizo:</span> {{cove.granizo ? ' Si' : ' No'}}</p>
-      <p><span>Costo:</span> {{cove.costo}}</p>
-      <p><span>Producto:</span> {{cove.producto}}</p>
+    <div class="container" *ngFor="let coverage of coverages">
+      <app-card-coverage 
+        [granizo]="coverage.granizo" [producto]="coverage.producto"
+        [codigoProducto]="coverage.codigoProducto" [franquicia]="coverage.franquicia"
+        [puntaje]="coverage.puntaje" [costo]="coverage.costo">
+      </app-card-coverage>
     </div>
     <button class="btn btn-outline-primary btn-block" 
             (click)="goBack('coverage')">
