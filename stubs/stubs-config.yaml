@@ -8,10 +8,10 @@
         content-type: application/json
         access-control-allow-origin: "*"
         access-control-allow-method: "*"
-      file: location/location-200.json
+      file: location/provincias-200.json
 
 - request:
-    url: ^/vehiculos/marcas
+    url: ^/municipios
     method: GET
   response:
     - status: 200
@@ -20,10 +20,22 @@
         content-type: application/json
         access-control-allow-origin: "*"
         access-control-allow-method: "*"
-      file: vehicles/marcas-200.json
+      file: location/municipios-200.json
 
 - request:
-    url: ^/vehiculos/marcas
+    url: ^/vehiculos/marcas/12/2015/34
+    method: GET
+  response:
+    - status: 200
+      latency: 5000
+      headers:
+        content-type: application/json
+        access-control-allow-origin: "*"
+        access-control-allow-method: "*"
+      file: vehicles/versiones-200.json
+
+- request:
+    url: ^/vehiculos/marcas/12/2015
     method: GET
   response:
     - status: 200
@@ -44,7 +56,7 @@
         content-type: application/json
         access-control-allow-origin: "*"
         access-control-allow-method: "*"
-      file: vehicles/versiones-200.json
+      file: vehicles/marcas-200.json
 
 - request:
     url: ^/coberturas

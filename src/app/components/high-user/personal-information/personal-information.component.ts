@@ -13,23 +13,27 @@ import { Router } from '@angular/router';
 export class PersonalInformationComponent implements OnInit {
 
   inputs:{}[];
-  inputsUserPass:{}[];
-  inputsAdress:{}[];
   provincias: [];
-  form: FormGroup;
-  loadingMuni: boolean;
   municipios: [];
+  form: FormGroup;
+  inputsAdress:{}[];
+  inputsUserPass:{}[];
+  loadingMuni: boolean;
   formEstructure: object
+  loadingServices:boolean
 
   constructor(private formBuilder: FormBuilder,
               private locationService: LocationService,
               private router: Router) {
     this.inputs = input;
+    this.loadingServices = true;
     this.inputsUserPass = inputsUserPass;
     this.inputsAdress = inputsAdress;
     this.formEstructure = formEstructure;
     this.locationService.getProvincia()
-      .subscribe(response => this.provincias = response);
+      .subscribe(response => 
+        { this.loadingServices = false
+          return this.provincias = response})
     this.loadForm();
   }
   

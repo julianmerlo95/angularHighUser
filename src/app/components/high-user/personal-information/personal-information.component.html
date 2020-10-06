@@ -8,7 +8,10 @@
         <app-input [inputs]="inputs" [form]="form"></app-input>
       </div>
     </div>
-    <div class="form-group row container-input options">
+    <div class="loading" *ngIf="loadingServices">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loadingServices" class="form-group row container-input options">
       <div class="col-sm-12 col-md-6 col-lg-6">
         <app-select [elements]="provincias" [form]="form" [name]="'provincia'" [labelName]="'Provincias'" [item]="'nombre'" [itemTwo]="'id'" ></app-select>
       </div>
@@ -19,8 +22,11 @@
               (click)="getMuni()">{{loadingMuni ? 'Cargando...' : 'Buscar Municipalidad'}}
       </button>
       <small class="description-text">Para poder buscar un municipio, antes tenes que seleccionar una provincia</small>
-    </div>  
-    <div class="form-group row container-input options">
+    </div> 
+    <div class="loading" *ngIf="loadingMuni">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loadingMuni" class="form-group row container-input options">
       <div class="col-sm-12 col-md-6 col-lg-6">
         <app-select [elements]="municipios" [form]="form" [name]="'municipios'" [labelName]="'Municipio'" [item]="'nombre'" ></app-select>
       </div>
@@ -31,7 +37,7 @@
       </div>
     </div>
     <div class="form-group row container-input">
-      <div class="col-sm-4 col-md-11 col-lg-6">
+      <div class="col-sm-4 col-md-11 col-lg-12">
         <app-input [inputs]="inputsUserPass" [form]="form"></app-input>
       </div>
     </div>

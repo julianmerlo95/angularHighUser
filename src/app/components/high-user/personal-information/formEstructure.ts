@@ -16,13 +16,13 @@ export const formEstructure = {
   celular : [Object.keys(user).length > 1 && user.user ? user.user[0].celular : '' ,
     [Validators.pattern('^[0-9]*$'), Validators.minLength(10), Validators.maxLength(15)]],
   telefono : [Object.keys(user).length > 1 && user.user ? user.user[0].telefono : '' ,
-    [Validators.pattern('^[0-9]*$')]],
+    [Validators.pattern('^[0-9]*$'), Validators.minLength(7), Validators.maxLength(15)]],
   FechaDeNacimiento : [Object.keys(user).length > 1 && user.user  ? user.user[0].FechaDeNacimiento : ''],
   provincia: [Object.keys(user).length > 1 && user.user ? user.user[0].provincia : '' , [Validators.required]],
   municipios: [Object.keys(user).length > 1 && user.user ? user.user[0].municipios : '' , [Validators.required]],
   domicilio: [Object.keys(user).length > 1 && user.user ? user.user[0].domicilio : '' , [Validators.minLength(3)]],
   usuario: [Object.keys(user).length > 1 && user.user ? user.user[0].usuario : '' ,
-    [Validators.required, Validators.minLength(7), Validators.maxLength(8)]],
+    [Validators.required]],
   contraseña: [Object.keys(user).length > 1 && user.user ? user.user[0].contraseña : '' ,
-    [Validators.required, Validators.minLength(7)]]
+    [Validators.required, Validators.minLength(6)]]
 };

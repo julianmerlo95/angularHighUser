@@ -28,6 +28,9 @@ las formas que tienen para iniciar la app
 - -----------input
 - -----------select
 - -----------spinner
+- -----------card-coverage
+- -----------card-summary
+- -----------card-vehicle
 - ---services
 - assets
 - environments

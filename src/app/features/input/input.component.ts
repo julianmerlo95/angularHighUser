@@ -19,4 +19,16 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  
+  validaruser(value, form){
+    console.log('entro');
+    
+    if(form.value.usuario){  
+      this.validatorService.userValidate(value.value).subscribe(response => {
+        if(response){ 
+          form.controls.usuario.status = "INVALID"
+          }
+        })
+      }
+    }
+  }
