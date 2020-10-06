@@ -14,7 +14,7 @@ las formas que tienen para iniciar la app
 - "lint:scss": "stylelint \"src/**/*.scss\"",`npm run lint:scss`
 - "lint:scss:fix": "stylelint --fix \"src/**/*.scss\"",`npm run lint:scss:fix`
 
-## Estructura
+### Estructura
 - app
 - ---components
 - ------------goodbye

@@ -2,8 +2,7 @@
   "name": "form-subscription",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "start:stubs": "concurrently \"ng serve --c=stubs --host 0.0.0.0 \" \"npm:stubs\"",
     "start:dev": "ng serve --c=dev -o",
     "lint:app": "tslint \"src/**/*.ts\"",
