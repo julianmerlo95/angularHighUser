@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HighUserComponent implements OnInit {
 
   constructor() {
-  if (!localStorage.getItem('user')) {
-    localStorage.setItem('user', JSON.stringify({}));
-  }
+    if (!localStorage.getItem('user')) {
+      localStorage.setItem('user', JSON.stringify({}));
+    }
   }
 
   ngOnInit(): void {

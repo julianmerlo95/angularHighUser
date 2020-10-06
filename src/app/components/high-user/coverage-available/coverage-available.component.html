@@ -3,11 +3,18 @@
   <h2 class="title-information">Seleccione la cobertura que desea contratar</h2>
 </div>
 
+<div>
+  <button class="btn btn-outline-primary btn-block button" 
+  (click)="goBack()">
+  Volver a Cobertura
+</button>
+</div>
+
 <div *ngIf="loadingData">
   <app-spinner></app-spinner>
 </div>
 <div *ngIf="!loadingData" class="container-card row animated fadeIn fast">
-  <div class="card col-sm-4 col-md-11 col-lg-3" *ngFor="let coverage of coverages; let i = index" style="width: 18rem;">
+  <div class="card col-sm-4 col-md-10 col-lg-3" *ngFor="let coverage of coverages; let i = index" style="width: 18rem;">
     <div class="card-body ">
       <div class="card-container-middle">
         <h5 class="card-title">{{coverage.titulo}}</h5>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { RequestService } from './request.service';
 import { HttpClient } from '@angular/common/http';
@@ -20,11 +20,11 @@ export class ValidatorsService {
     return form.get(value).invalid && form.get(value).touched;
   }
 
-  validateUser(control: FormControl): Promise<any> | Observable<any>{
-    console.log(control.value);
-    return this.service.request(`${environment.user}miguel`)
-      .pipe(map((response: any) => console.log(response)));
-}
+//   validateUser(control: FormControl): Promise<any> | Observable<any>{
+//     console.log(control.value);
+//     return this.service.request(`${environment.user}miguel`)
+//       .pipe(map((response: any) => console.log(response)));
+// }
 
   dateValidate(date: FormControl): any{
       const convertAge = new Date(date.value);

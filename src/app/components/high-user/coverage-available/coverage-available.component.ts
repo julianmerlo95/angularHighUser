@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { CoverageService } from 'src/app/services/coverage.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,8 +15,8 @@ export class CoverageAvailableComponent implements OnInit {
 
   constructor(private service: CoverageService,
               private router: Router) {
-                this.loadingData = true;
-              }
+              this.loadingData = true;
+  }
 
   ngOnInit(): void {
     this.service.getCoverage().subscribe((response: []) => {
@@ -34,7 +34,8 @@ export class CoverageAvailableComponent implements OnInit {
   nextStep(): any{
     const user: any = JSON.parse(localStorage.getItem('user'));
     const coverage = this.selectCoverage;
-    localStorage.setItem('user', JSON.stringify({...user, coverage: [coverage]}));
+    localStorage.setItem('user', 
+      JSON.stringify({...user, coverage: [coverage]}));
     this.router.navigate(['/high/summary']);
   }
 

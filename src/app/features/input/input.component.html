@@ -1,5 +1,5 @@
 <form autocomplete="off" [formGroup]="form" class="row ">
-  <div *ngFor="let input of inputs" [class]="input.column || 'col-sm-4 col-md-11 col-lg-6'">
+  <div *ngFor="let input of inputs" [class]="input.column || 'col-sm-4 col-md-12 col-lg-6'">
     <input class="form-control"
           [type]="input.type || 'text'"
           [placeholder]="input.placeholder"

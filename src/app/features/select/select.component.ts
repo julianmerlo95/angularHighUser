@@ -21,8 +21,6 @@ export class SelectComponent implements OnInit {
   }
 
   inputValidate(value, form): any{
-    console.log(form.get(value).invalid);
-
     return form.get(value).invalid && form.get(value).touched;
   }
 

@@ -1,22 +1,29 @@
 <div class="container-title">
   <h2 class="title-information">Resumen de todos los datos</h2>
 </div>
+<div>
+  <button class="btn btn-outline-primary btn-block button" 
+  (click)="goBack('coverage')">
+  Volver a Vehiculo
+</button>
+</div>
+
 <div class="container-jumbotron animated fadeIn fast">
   <div class="jumbotron jumbotron-fluid">
     <div class="container-text"> 
       <h2>Datos personales</h2>
     </div>
     <div class="container" *ngFor="let info of information">
-      <h5 class=""><span>Nombre:</span> {{info.nombre}}</h5>
-      <h5 class=""><span>Apellido:</span> {{info.apellido}}</h5>
-      <h5 class=""><span>Dni:</span> {{info.dni}}</h5>
-      <h5 class=""><span>email:</span> {{info.email}}</h5>
-      <h5 class=""><span>FechaDeNacimiento:</span> {{info.FechaDeNacimiento}}</h5>
-      <h5 class=""><span>provincia:</span> {{info.provincia}}</h5>
-      <h5 class=""><span>Municipio:</span> {{info.municipios}}</h5>
-      <h5 class=""><span>celular:</span> {{info.celular}}</h5>
-      <h5 class=""><span>telefono:</span> {{info.telefono}}</h5>
-      <h5 class=""><span>usuario:</span> {{info.usuario}}</h5>
+      <p><span>Nombre:</span> {{info.nombre}}</p>
+      <p><span>Apellido:</span> {{info.apellido}}</p>
+      <p><span>Dni:</span> {{info.dni}}</p>
+      <p><span>email:</span> {{info.email}}</p>
+      <p><span>FechaDeNacimiento:</span> {{info.FechaDeNacimiento}}</p>
+      <p><span>provincia:</span> {{info.provincia}}</p>
+      <p><span>Municipio:</span> {{info.municipios}}</p>
+      <p><span>celular:</span> {{info.celular}}</p>
+      <p><span>telefono:</span> {{info.telefono}}</p>
+      <p><span>usuario:</span> {{info.usuario}}</p>
     </div>
     <button class="btn btn-outline-primary btn-block"
             (click)="goBack('information')">
@@ -29,10 +36,10 @@
       <h2>Datos sobre el vehiculo</h2>
     </div>
     <div class="container" *ngFor="let car of vehicle">
-      <h5 class=""><span>Año:</span> {{car.ano}}</h5>
-      <h5 class=""><span>Marca:</span> {{car.marca}}</h5>
-      <h5 class=""><span>Modelo:</span> {{car.modelo}}</h5>
-      <h5 class=""><span>Version:</span> {{car.version}}</h5>
+      <p><span>Año:</span> {{car.ano}}</p>
+      <p><span>Marca:</span> {{car.marca}}</p>
+      <p><span>Modelo:</span> {{car.modelo}}</p>
+      <p><span>Version:</span> {{car.version}}</p>
     </div>
     <button class="btn btn-outline-primary btn-block"
             (click)="goBack('vehicle')">
@@ -45,12 +52,12 @@
       <h2>Datos sobre cobertura</h2>
     </div>    
     <div class="container" *ngFor="let cove of coverage">
-      <h5 class=""><span>Titulo:</span> {{cove.titulo}}</h5>
-      <h5 class=""><span>Texto:</span> {{cove.texto}}</h5>
-      <h5 class=""><span>Descripcion:</span> {{cove.descripcion}}</h5>
-      <h5 class=""><span>Granizo:</span> {{cove.granizo}}</h5>
-      <h5 class=""><span>Costo:</span> {{cove.costo}}</h5>
-      <h5 class=""><span>Producto:</span> {{cove.producto}}</h5>
+      <p><span>Titulo:</span> {{cove.titulo}}</p>
+      <p><span>Texto:</span> {{cove.texto}}</p>
+      <p><span>Descripcion:</span> {{cove.descripcion}}</p>
+      <p><span>Granizo:</span> {{cove.granizo ? ' Si' : ' No'}}</p>
+      <p><span>Costo:</span> {{cove.costo}}</p>
+      <p><span>Producto:</span> {{cove.producto}}</p>
     </div>
     <button class="btn btn-outline-primary btn-block" 
             (click)="goBack('coverage')">
