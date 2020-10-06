@@ -4,6 +4,10 @@
   margin: 0 auto;
   width: 100%;
 }
+.button{
+  width: 20%;
+  margin: 0px 0px 10px 20px
+}
 
 .jumbotron {
   background: white;
@@ -51,5 +55,9 @@ span {
 
   .btn-success {
     margin-bottom: 25px;
+  }
+
+  .button{
+    width: 50%;
   }
 }
