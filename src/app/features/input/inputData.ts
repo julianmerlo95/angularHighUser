@@ -6,4 +6,4 @@ export const input = [{name: 'dni', placeholder: 'Dni', msg: 'Solo ingrese numer
 
 export const inputsUserPass = [{name: 'usuario', placeholder: 'Usuario', msg: 'Ya existe el usuario'},
                                 {name: 'contraseña', placeholder: 'Contraseña', type: 'password', msg: 'Ingrese minimo 6 caracteres'}];
-export const inputsAdress = [{name: 'domicilio', placeholder: 'Domicilio', msg: 'Ingrese minimo 3 letras',column: 'col-sm-4 col-md-11 col-lg-12'}];
+export const inputsAdress = [{name: 'domicilio', placeholder: 'Domicilio', msg: 'Ingrese minimo 3 letras', column: 'col-sm-4 col-md-11 col-lg-12'}];

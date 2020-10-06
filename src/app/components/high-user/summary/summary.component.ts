@@ -24,7 +24,7 @@ export class SummaryComponent implements OnInit {
     this.vehicle = this.user.vehicle;
     this.coverages = this.user.coverage;
     console.log(this.coverages[0].producto);
-    
+
   }
 
   goBack(path): any{

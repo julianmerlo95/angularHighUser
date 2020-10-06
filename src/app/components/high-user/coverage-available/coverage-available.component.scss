@@ -16,9 +16,9 @@
   transition: 0.5s;
 }
 
-.button{
+.button {
+  margin: 0 0 10px 20px;
   width: 20%;
-  margin: 0px 0px 10px 20px
 }
 
 .card:hover {
@@ -44,11 +44,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .button{
+
+  .button {
     width: 50%;
   }
 }
-
 
 @media screen and (max-width: 425px) {
 

@@ -1,6 +1,6 @@
 import { VehiclesService } from 'src/app/services/vehicles.service';
 import { FormGroup, FormBuilder} from '@angular/forms';
-import { formEstructure } from "./formEstructure";
+import { formEstructure } from './formEstructure';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class VehicleDataComponent implements OnInit {
   marcas: [];
   modelos: [];
-  inputs:{}[];
+  inputs: {}[];
   versiones: [];
   form: FormGroup;
   loadingModel: boolean;
@@ -25,24 +25,24 @@ export class VehicleDataComponent implements OnInit {
               private router: Router,
               private vehicleService: VehiclesService) {
     this.vehicleService.getMarca().subscribe((response: []) => this.marcas = response);
-    this.inputs = [{name: 'ano', placeholder: 'Año', 
+    this.inputs = [{name: 'ano', placeholder: 'Año',
       msg: 'Ultimos 20 años', column: 'col-sm-4 col-md-11 col-lg-12'}];
-      this.enableButtonVersion = true;
-      this.enableButtonModel = true;
-      this.selectDisable = false;
-      this.loadForm();
+    this.enableButtonVersion = true;
+    this.enableButtonModel = true;
+    this.selectDisable = false;
+    this.loadForm();
   }
 
   ngOnInit(): void {
   }
 
   loadForm(): any{
-    this.form = this.formBuilder.group(formEstructure)
+    this.form = this.formBuilder.group(formEstructure);
   }
 
   getModelo(): any{
     this.loadingModel = true;
-    this.vehicleService.getModelo(this.form.value.marca,  
+    this.vehicleService.getModelo(this.form.value.marca,
         this.form.value.ano)
         .subscribe((response: []) => {
           this.modelos = response;
@@ -53,7 +53,7 @@ export class VehicleDataComponent implements OnInit {
 
   getVersion(): any{
     this.loadingVersion = true;
-    this.vehicleService.getVersion(this.form.value.marca, 
+    this.vehicleService.getVersion(this.form.value.marca,
             this.form.value.ano, this.form.value.modelo)
         .subscribe((response: []) => {
           this.loadingVersion = false;
@@ -61,7 +61,7 @@ export class VehicleDataComponent implements OnInit {
     });
   }
 
-  validateStatusInputs(){
+  statusInputsValidate(): any{
     if ( this.form.invalid ) {
       return Object.values( this.form.controls ).forEach( control => {
         if ( control instanceof FormGroup ) {
@@ -76,17 +76,17 @@ export class VehicleDataComponent implements OnInit {
 
   nextStep(): any{
     const user: any = JSON.parse(localStorage.getItem('user'));
-    if(this.form.invalid ){
-      return this.validateStatusInputs();
+    if (this.form.invalid ){
+      return this.statusInputsValidate();
     }
     const vehicle = this.form.value;
-    localStorage.setItem('user', 
+    localStorage.setItem('user',
       JSON.stringify({...user, vehicle: [vehicle]}));
     this.router.navigate(['/high/coverage']);
   }
 
   goBack(): any{
-    localStorage.setItem('user', 
+    localStorage.setItem('user',
       JSON.stringify({user: this.form.value}));
     this.router.navigate(['/high/information']);
   }

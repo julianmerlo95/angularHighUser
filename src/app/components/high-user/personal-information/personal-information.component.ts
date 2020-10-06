@@ -12,15 +12,15 @@ import { Router } from '@angular/router';
 })
 export class PersonalInformationComponent implements OnInit {
 
-  inputs:{}[];
+  inputs: {}[];
   provincias: [];
   municipios: [];
   form: FormGroup;
-  inputsAdress:{}[];
-  inputsUserPass:{}[];
+  inputsAdress: {}[];
+  inputsUserPass: {}[];
   loadingMuni: boolean;
-  formEstructure: object
-  loadingServices:boolean
+  formEstructure: object;
+  loadingServices: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private locationService: LocationService,
@@ -31,12 +31,12 @@ export class PersonalInformationComponent implements OnInit {
     this.inputsAdress = inputsAdress;
     this.formEstructure = formEstructure;
     this.locationService.getProvincia()
-      .subscribe(response => 
-        { this.loadingServices = false
-          return this.provincias = response})
+      .subscribe(response =>
+        { this.loadingServices = false;
+          return this.provincias = response; });
     this.loadForm();
   }
-  
+
   ngOnInit(): void {
   }
 
@@ -44,7 +44,7 @@ export class PersonalInformationComponent implements OnInit {
     this.form = this.formBuilder.group(this.formEstructure);
   }
 
-  getMuni():any{
+  getMuni(): any{
     this.loadingMuni = true;
     this.locationService.getMunicipalidad(this.form.value.provincia)
       .subscribe(response => {
@@ -53,7 +53,7 @@ export class PersonalInformationComponent implements OnInit {
       });
   }
 
-  validateStatusInputs(){
+  statusInputsValidate(): any{
     if ( this.form.invalid ) {
       return Object.values( this.form.controls ).forEach( control => {
         if ( control instanceof FormGroup ) {
@@ -68,8 +68,8 @@ export class PersonalInformationComponent implements OnInit {
 
   nextStep(): any{
     const user = JSON.parse(localStorage.getItem('user'));
-    if(this.form.invalid ){
-      return this.validateStatusInputs();
+    if (this.form.invalid ){
+      return this.statusInputsValidate();
     }
     this.provincias.forEach((pro: any) => {if (pro.id === this.form.value.provincia){
                                           this.form.value.provincia = pro.nombre; }});

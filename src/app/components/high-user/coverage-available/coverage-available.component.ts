@@ -34,7 +34,7 @@ export class CoverageAvailableComponent implements OnInit {
   nextStep(): any{
     const user: any = JSON.parse(localStorage.getItem('user'));
     const coverage = this.selectCoverage;
-    localStorage.setItem('user', 
+    localStorage.setItem('user',
       JSON.stringify({...user, coverage: [coverage]}));
     this.router.navigate(['/high/summary']);
   }

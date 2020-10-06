@@ -18,7 +18,7 @@ export class ValidatorsService {
     return form.get(value).invalid && form.get(value).touched;
   }
 
-  userValidate(value){  
+  userValidate(value): any{
     return this.service.request(`${environment.user}?nombre=${value}`)
       .pipe(map((response: any) => response));
 }
