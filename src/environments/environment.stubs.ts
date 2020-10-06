@@ -9,7 +9,7 @@ export const environment = {
     modelo: `${API_ANDINA}/vehiculos/marcas`,
     version: `${API_ANDINA}/vehiculos/marcas`,
   },
-  user: `${API_MOCK}/usuarios?nombre=`,
+  user: `${API_MOCK}/usuarios`,
   coverage: `${API_MOCK}/coberturas`,
   location: {
     provincias: `${API_LOCATION}/provincias`,
