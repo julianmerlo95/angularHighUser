@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 })
 export class CoverageAvailableComponent implements OnInit {
 
-  coverages: [];
   selectCoverage: object;
   loadingData: boolean;
+  coverages: [];
 
   constructor(private service: CoverageService,
               private router: Router) {

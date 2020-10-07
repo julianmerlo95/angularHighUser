@@ -1,5 +1,5 @@
-const user = JSON.parse(localStorage.getItem('user'));
 import {Validators} from '@angular/forms';
+const user = JSON.parse(localStorage.getItem('user'));
 
 export const formEstructure = {
   marca : [user.vehicle ? user.vehicle[0].marca : '',

@@ -1,7 +1,7 @@
 import { Validators} from '@angular/forms';
 
 if (!localStorage.getItem('user')) {
-  localStorage.setItem('user', JSON.stringify({}));
+    localStorage.setItem('user', JSON.stringify({}));
 }
 const user = JSON.parse(localStorage.getItem('user'));
 
@@ -21,8 +21,7 @@ export const formEstructure = {
   provincia: [Object.keys(user).length > 1 && user.user ? user.user[0].provincia : '' , [Validators.required]],
   municipios: [Object.keys(user).length > 1 && user.user ? user.user[0].municipios : '' , [Validators.required]],
   domicilio: [Object.keys(user).length > 1 && user.user ? user.user[0].domicilio : '' , [Validators.minLength(3)]],
-  usuario: [Object.keys(user).length > 1 && user.user ? user.user[0].usuario : '' ,
-    [Validators.required]],
+  usuario: [Object.keys(user).length > 1 && user.user ? user.user[0].usuario : '' , [Validators.required]],
   contraseña: [Object.keys(user).length > 1 && user.user ? user.user[0].contraseña : '' ,
     [Validators.required, Validators.minLength(6)]]
 };

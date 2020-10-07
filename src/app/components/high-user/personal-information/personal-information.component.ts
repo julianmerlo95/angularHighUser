@@ -31,8 +31,8 @@ export class PersonalInformationComponent implements OnInit {
     this.inputsAdress = inputsAdress;
     this.formEstructure = formEstructure;
     this.locationService.getProvincia()
-      .subscribe(response =>
-        { this.loadingServices = false;
+      .subscribe(response => { 
+          this.loadingServices = false;
           return this.provincias = response; });
     this.loadForm();
   }

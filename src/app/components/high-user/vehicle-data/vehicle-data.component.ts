@@ -15,6 +15,7 @@ export class VehicleDataComponent implements OnInit {
   inputs: {}[];
   versiones: [];
   form: FormGroup;
+  loadingMarca: boolean;
   loadingModel: boolean;
   selectDisable: boolean;
   loadingVersion: boolean;
@@ -24,12 +25,15 @@ export class VehicleDataComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private vehicleService: VehiclesService) {
-    this.vehicleService.getMarca().subscribe((response: []) => this.marcas = response);
     this.inputs = [{name: 'ano', placeholder: 'Año',
       msg: 'Ultimos 20 años', column: 'col-sm-4 col-md-11 col-lg-12'}];
     this.enableButtonVersion = true;
     this.enableButtonModel = true;
     this.selectDisable = false;
+    this.loadingMarca = true
+    this.vehicleService.getMarca().subscribe((response: []) => {
+      this.loadingMarca = false
+      return this.marcas = response})
     this.loadForm();
   }
 

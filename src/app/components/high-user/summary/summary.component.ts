@@ -9,14 +9,12 @@ import { Router } from '@angular/router';
 export class SummaryComponent implements OnInit {
 
   information: any = [];
-  vehicle: any = [];
   coverages: any = [];
-  user;
+  vehicle: any = [];
+  user:any;
 
   constructor(private router: Router) {
     this.user = JSON.parse(localStorage.getItem('user'));
-    // if(!this.user.user)localStorage.setItem('user',JSON.stringify([...this.user,{}]))
-
   }
 
   ngOnInit(): void {

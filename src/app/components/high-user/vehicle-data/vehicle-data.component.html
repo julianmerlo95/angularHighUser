@@ -4,7 +4,10 @@
 
 <form autocomplete="off" [formGroup]="form" class="form animated fadeIn fast">
   <div>
-    <div class="form-group row container-input options">
+    <div class="loading" *ngIf="loadingMarca">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loadingMarca" class="form-group row container-input options">
       <div class="col-sm-4 col-md-11 col-lg-12">
         <app-select [elements]="marcas" [form]="form" [name]="'marca'" [labelName]="'Marcas'" 
                     [item]="'desc'" [itemTwo]="'codigo'"></app-select>
@@ -22,7 +25,10 @@
       </button>
       <small class="description-text">Para poder buscar un modelo, tiene que ingresar Marca y Año</small>
     </div>  
-    <div class="form-group row container-input options">
+    <div class="loading" *ngIf="loadingModel">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loadingModel" class="form-group row container-input options">
       <div class="col-sm-4 col-md-11 col-lg-12">
         <app-select [elements]="modelos" [form]="form" [name]="'modelo'" [labelName]="'Modelos'"></app-select>
       </div>
@@ -34,7 +40,10 @@
       </button>
       <small class="description-text">Para poder buscar una Version, tiene que ingresar Marca, Año y Modelo</small>
     </div>
-    <div class="form-group row container-input options">
+    <div class="loading" *ngIf="loadingVersion">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loadingVersion" class="form-group row container-input options">
       <div class="col-sm-4 col-md-11 col-lg-12">
         <app-select [elements]="versiones" [form]="form" [name]="'version'" [labelName]="'Versiones'" [item]="'desc'"></app-select>
       </div>
