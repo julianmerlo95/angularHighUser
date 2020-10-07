@@ -11,7 +11,7 @@ export class SummaryComponent implements OnInit {
   information: any = [];
   coverages: any = [];
   vehicle: any = [];
-  user:any;
+  user: any;
 
   constructor(private router: Router) {
     this.user = JSON.parse(localStorage.getItem('user'));
@@ -21,8 +21,6 @@ export class SummaryComponent implements OnInit {
     this.information = this.user.user;
     this.vehicle = this.user.vehicle;
     this.coverages = this.user.coverage;
-    console.log(this.coverages[0].producto);
-
   }
 
   goBack(path): any{

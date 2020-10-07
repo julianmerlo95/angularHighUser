@@ -7,16 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardSummaryComponent implements OnInit {
 
-  @Input() nombre: string;
-  @Input() apellido: string;
-  @Input() dni: string;
-  @Input() email: string;
   @Input() FechaDeNacimiento: string;
-  @Input() provincia: string;
   @Input() municipios: string;
-  @Input() celular: string;
+  @Input() provincia: string;
+  @Input() apellido: string;
   @Input() telefono: string;
   @Input() usuario: string;
+  @Input() celular: string;
+  @Input() nombre: string;
+  @Input() email: string;
+  @Input() dni: string;
   @Input() ano: string;
 
   constructor() { }

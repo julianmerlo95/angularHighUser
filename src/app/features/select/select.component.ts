@@ -7,12 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
-  @Input() elements;
-  @Input() form;
   @Input() labelName;
+  @Input() elements;
+  @Input() itemTwo;
+  @Input() form;
   @Input() name;
   @Input() item;
-  @Input() itemTwo;
 
   constructor() {
   }

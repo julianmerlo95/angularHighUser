@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RequestService } from './request.service';
 import { environment } from 'src/environments/environment';
+import { RequestService } from './request.service';
 import { map } from 'rxjs/operators';
 
 @Injectable({

@@ -8,11 +8,11 @@ import { ValidatorsService } from 'src/app/services/validators.service';
 })
 export class InputComponent implements OnInit {
 
-  @Input() inputs;
   @Input() validation;
+  @Input() inputs;
+  @Input() column;
   @Input() form;
   @Input() type;
-  @Input() column;
 
   constructor(private validatorService: ValidatorsService) { }
 
@@ -21,8 +21,6 @@ export class InputComponent implements OnInit {
 
 
   availableUser(value, form): any{
-    console.log('entro');
-
     if (form.value.usuario){
       this.validatorService.userValidate(value.value).subscribe(response => {
         if (response){

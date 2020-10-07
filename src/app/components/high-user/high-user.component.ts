@@ -9,7 +9,7 @@ export class HighUserComponent implements OnInit {
 
   constructor() {
     if (!localStorage.getItem('user')) {
-      localStorage.setItem('user', JSON.stringify({}));
+          localStorage.setItem('user', JSON.stringify({}));
     }
   }
 

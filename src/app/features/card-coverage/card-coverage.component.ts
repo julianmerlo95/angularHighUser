@@ -7,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardCoverageComponent implements OnInit {
 
-  @Input() granizo: string;
-  @Input() producto: string;
   @Input() codigoProducto: string;
   @Input() franquicia: string;
+  @Input() producto: string;
   @Input() puntaje: string;
+  @Input() granizo: string;
   @Input() costo: string;
 
   constructor() { }

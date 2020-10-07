@@ -1,7 +1,7 @@
 import { VehiclesService } from 'src/app/services/vehicles.service';
 import { FormGroup, FormBuilder} from '@angular/forms';
-import { formEstructure } from './formEstructure';
 import { Component, OnInit } from '@angular/core';
+import {Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./vehicle-data.component.scss']
 })
 export class VehicleDataComponent implements OnInit {
+  user: any;
   marcas: [];
   modelos: [];
   inputs: {}[];
@@ -25,15 +26,17 @@ export class VehicleDataComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private vehicleService: VehiclesService) {
+
     this.inputs = [{name: 'ano', placeholder: 'Año',
       msg: 'Ultimos 20 años', column: 'col-sm-4 col-md-11 col-lg-12'}];
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.enableButtonVersion = true;
     this.enableButtonModel = true;
     this.selectDisable = false;
-    this.loadingMarca = true
+    this.loadingMarca = true;
     this.vehicleService.getMarca().subscribe((response: []) => {
-      this.loadingMarca = false
-      return this.marcas = response})
+      this.loadingMarca = false;
+      return this.marcas = response; });
     this.loadForm();
   }
 
@@ -41,7 +44,15 @@ export class VehicleDataComponent implements OnInit {
   }
 
   loadForm(): any{
-    this.form = this.formBuilder.group(formEstructure);
+    this.form = this.formBuilder.group({
+      marca : [this.user.vehicle ? this.user.vehicle[0].marca : '',
+        [Validators.required]],
+      ano : [this.user.vehicle ? this.user.vehicle[0].ano : '',
+        [Validators.required, Validators.pattern('^[0-9]*$'), Validators.min(2000), Validators.max(2020)]],
+      modelo : [this.user.vehicle ? this.user.vehicle[0].modelo : '',
+        [Validators.required]],
+      version : [this.user.vehicle ? this.user.vehicle[0].version : ''],
+    });
   }
 
   getModelo(): any{
@@ -79,19 +90,16 @@ export class VehicleDataComponent implements OnInit {
   }
 
   nextStep(): any{
-    const user: any = JSON.parse(localStorage.getItem('user'));
     if (this.form.invalid ){
       return this.statusInputsValidate();
     }
     const vehicle = this.form.value;
     localStorage.setItem('user',
-      JSON.stringify({...user, vehicle: [vehicle]}));
+      JSON.stringify({...this.user, vehicle: [vehicle]}));
     this.router.navigate(['/high/coverage']);
   }
 
   goBack(): any{
-    localStorage.setItem('user',
-      JSON.stringify({user: this.form.value}));
     this.router.navigate(['/high/information']);
   }
 
