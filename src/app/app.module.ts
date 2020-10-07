@@ -18,6 +18,7 @@ import { SpinnerComponent } from './features/spinner/spinner.component';
 import { CardCoverageComponent } from './features/card-coverage/card-coverage.component';
 import { CardSummaryComponent } from './features/card-summary/card-summary.component';
 import { CardVehicleComponent } from './features/card-vehicle/card-vehicle.component';
+import { CardHomeComponent } from './features/card-home/card-home.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { CardVehicleComponent } from './features/card-vehicle/card-vehicle.compo
     CardCoverageComponent,
     CardSummaryComponent,
     CardVehicleComponent,
+    CardHomeComponent,
   ],
   imports: [
     BrowserModule,
