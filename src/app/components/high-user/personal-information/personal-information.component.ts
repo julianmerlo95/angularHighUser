@@ -98,7 +98,7 @@ loadForm(): any{
       return this.statusInputsValidate();
     }
     this.provincias.forEach((pro: any) => {if (pro.id === this.form.value.provincia){
-                                          this.form.value.provincia = pro.nombre; }});
+      this.form.value.provincia = pro.nombre; }});
     localStorage.setItem('user', JSON.stringify({...user, user: [this.form.value]}));
     return this.router.navigate(['/high/vehicle']);
   }

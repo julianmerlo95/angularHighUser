@@ -10,6 +10,7 @@ export class CardSummaryComponent implements OnInit {
   @Input() FechaDeNacimiento: string;
   @Input() municipios: string;
   @Input() provincia: string;
+  @Input() domicilio: string;
   @Input() apellido: string;
   @Input() telefono: string;
   @Input() usuario: string;

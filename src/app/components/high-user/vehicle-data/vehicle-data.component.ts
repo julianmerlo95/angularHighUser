@@ -96,8 +96,10 @@ export class VehicleDataComponent implements OnInit {
       return this.statusInputsValidate();
     }
     const vehicle = this.form.value;
-    localStorage.setItem('user',
-      JSON.stringify({...this.user, vehicle: [vehicle]}));
+    this.marcas.forEach((marca: any) => {if(marca.codigo == this.form.value.marca)
+      this.form.value.marca = marca.desc});
+      localStorage.setItem('user',
+        JSON.stringify({...this.user, vehicle: [vehicle]}));
     this.router.navigate(['/high/coverage']);
   }
 
