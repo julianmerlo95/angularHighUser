@@ -4,13 +4,13 @@
   "scripts": {
     "start": "ng serve -o",
     "start:stubs": "concurrently \"ng serve --c=stubs --host 0.0.0.0 \" \"npm:stubs\"",
-    "start:dev": "ng serve --c=dev -o",
+    "start:dev": "ng serve --c=dev",
     "lint:app": "tslint \"src/**/*.ts\"",
     "lint:app:fix": "tslint --fix \"src/**/*.ts\"",
     "lint:scss": "stylelint \"src/**/*.scss\"",
     "lint:scss:fix": "stylelint --fix \"src/**/*.scss\"",
     "stubs": "stubby --data stubs/stubs-config.yaml",
-    "build": "ng build",
+    "build": "ng build --c=dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

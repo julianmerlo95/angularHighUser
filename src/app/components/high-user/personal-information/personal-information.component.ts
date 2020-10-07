@@ -14,15 +14,15 @@ import { Validators} from '@angular/forms';
 })
 export class PersonalInformationComponent implements OnInit {
 
-  inputs: {}[];
-  provincias: [];
-  municipios: [];
-  form: FormGroup;
-  inputsAdress: {}[];
-  inputsUserPass: {}[];
-  loadingMuni: boolean;
-  formEstructure: object;
   loadingServices: boolean;
+  formEstructure: object;
+  loadingMuni: boolean;
+  inputsUserPass: {}[];
+  inputsAdress: {}[];
+  form: FormGroup;
+  municipios: [];
+  provincias: [];
+  inputs: {}[];
 
   constructor(private formBuilder: FormBuilder,
               private locationService: LocationService,
@@ -61,10 +61,12 @@ loadForm(): any{
       [this.validatorService.dateValidate]],
     provincia: [Object.keys(user).length >= 1 && user.user ? user.user[0].provincia : '' , [Validators.required]],
     municipios: [Object.keys(user).length >= 1 && user.user ? user.user[0].municipios : '' , [Validators.required]],
-    domicilio: [Object.keys(user).length >= 1 && user.user ? user.user[0].domicilio : '' , [Validators.minLength(3)]],
-    usuario: [Object.keys(user).length >= 1 && user.user ? user.user[0].usuario : '' , [Validators.required]],
+    domicilio: [Object.keys(user).length >= 1 && user.user ? user.user[0].domicilio : '' , [Validators.minLength(3),
+      Validators.pattern("^[a-zA-Z0-9 ]+$")]],
+    usuario: [Object.keys(user).length >= 1 && user.user ? user.user[0].usuario : '' , [Validators.required,
+      Validators.pattern("^[a-zA-Z0-9 ]+$")]],
     contraseña: [Object.keys(user).length >= 1 && user.user ? user.user[0].contraseña : '' ,
-      [Validators.required, Validators.minLength(6)]]
+      [Validators.required, Validators.minLength(6), Validators.pattern("^[a-zA-Z0-9 ]+$")]]
   });
   }
 

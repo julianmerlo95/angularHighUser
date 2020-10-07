@@ -10,18 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./vehicle-data.component.scss']
 })
 export class VehicleDataComponent implements OnInit {
-  user: any;
-  marcas: [];
-  modelos: [];
-  inputs: {}[];
-  versiones: [];
-  form: FormGroup;
-  loadingMarca: boolean;
-  loadingModel: boolean;
-  selectDisable: boolean;
-  loadingVersion: boolean;
-  enableButtonModel: boolean;
   enableButtonVersion: boolean;
+  enableButtonModel: boolean;
+  loadingVersion: boolean;
+  selectDisable: boolean;
+  loadingModel: boolean;
+  loadingMarca: boolean;
+  form: FormGroup;
+  versiones: [];
+  inputs: {}[];
+  modelos: [];
+  marcas: [];
+  user: any;
+
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -48,7 +49,8 @@ export class VehicleDataComponent implements OnInit {
       marca : [this.user.vehicle ? this.user.vehicle[0].marca : '',
         [Validators.required]],
       ano : [this.user.vehicle ? this.user.vehicle[0].ano : '',
-        [Validators.required, Validators.pattern('^[0-9]*$'), Validators.min(2000), Validators.max(2020)]],
+        [Validators.required, Validators.pattern('^[0-9]*$'), 
+        Validators.min(2000), Validators.max(2020)]],
       modelo : [this.user.vehicle ? this.user.vehicle[0].modelo : '',
         [Validators.required]],
       version : [this.user.vehicle ? this.user.vehicle[0].version : ''],
