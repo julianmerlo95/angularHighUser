@@ -15,26 +15,28 @@ las formas que tienen para iniciar la app
 - "lint:scss:fix": "stylelint --fix \"src/**/*.scss\"",`npm run lint:scss:fix`
 
 ### Estructura
-- app
-- ---components
-- ------------goodbye
-- ------------high-user
-- --------------------coverage-available
-- --------------------personal-information
-- --------------------summary
-- --------------------vehicle-data
-- ------------home
-- ---features
-- -----------input
-- -----------select
-- -----------spinner
-- -----------card-coverage
-- -----------card-summary
-- -----------card-vehicle
-- -----------card-home
-- ---services
-- assets
-- environments
+-src/
+- --app
+- -----components
+- --------------goodbye
+- --------------high-user
+- ----------------------coverage-available
+- ----------------------personal-information
+- ----------------------summary
+- ----------------------vehicle-data
+- --------------home
+- -----features
+- -------------input
+- -------------select
+- -------------spinner
+- -------------card-coverage
+- -------------card-summary
+- -------------card-vehicle
+- -------------card-home
+- -----services
+- --assets
+- --environments
+- - stubs/
 
 ### Ambientes
 Tenemos configurados los ambientes de stubs y dev. Tranquilamente podriamos configurar test, staging y prod (o los que se necesiten)
