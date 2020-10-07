@@ -31,6 +31,7 @@ las formas que tienen para iniciar la app
 - -----------card-coverage
 - -----------card-summary
 - -----------card-vehicle
+- -----------card-home
 - ---services
 - assets
 - environments
